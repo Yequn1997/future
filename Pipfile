@@ -19,6 +19,7 @@ markdown = "*"
 bleach = "*"
 flask-httpauth = "*"
 httpie = "*"
+flask-debugtoolbar = "*"
 
 [dev-packages]
 

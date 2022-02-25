@@ -6,12 +6,14 @@ from flask_mail import Mail
 from settings import config
 from flask_login import LoginManager
 from flask_pagedown import PageDown
+from flask_debugtoolbar import DebugToolbarExtension
 
 bootstrap = Bootstrap()
 moment = Moment()
 mail = Mail()
 db = SQLAlchemy()
 pagedown = PageDown()
+toolbar = DebugToolbarExtension()
 
 
 login_manager = LoginManager()
@@ -29,6 +31,7 @@ def create_app(config_name):
     moment.init_app(app)
     db.init_app(app)
     pagedown.init_app(app)
+    toolbar.init_app(app)
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
